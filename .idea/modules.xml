@@ -5,6 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/android_joke_teller.iml" filepath="$PROJECT_DIR$/android_joke_teller.iml" />
       <module fileurl="file://$PROJECT_DIR$/androidjokedisplayer/androidjokedisplayer.iml" filepath="$PROJECT_DIR$/androidjokedisplayer/androidjokedisplayer.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/backend/backend.iml" filepath="$PROJECT_DIR$/backend/backend.iml" />
       <module fileurl="file://$PROJECT_DIR$/javajokeprovider/javajokeprovider.iml" filepath="$PROJECT_DIR$/javajokeprovider/javajokeprovider.iml" />
     </modules>
   </component>
