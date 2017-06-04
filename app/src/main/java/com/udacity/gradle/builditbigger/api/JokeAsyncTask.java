@@ -1,25 +1,23 @@
 package com.udacity.gradle.builditbigger.api;
 
-import android.content.Context;
 import android.os.AsyncTask;
-import android.support.v4.util.Pair;
-import android.widget.Toast;
 
 import com.google.api.client.extensions.android.http.AndroidHttp;
 import com.google.api.client.extensions.android.json.AndroidJsonFactory;
 import com.google.api.client.googleapis.services.AbstractGoogleClientRequest;
 import com.google.api.client.googleapis.services.GoogleClientRequestInitializer;
+import com.udacity.gradle.builditbigger.JokeTeller;
 
 import java.io.IOException;
 
 import eu.laramartin.joketeller.backend.myApi.MyApi;
 
-public class JokeAsyncTask extends AsyncTask<Pair<Context, String>, Void, String> {
+public class JokeAsyncTask extends AsyncTask<JokeTeller, Void, String> {
     private static MyApi myApiService = null;
-    private Context context;
+    private JokeTeller jokeTeller;
 
     @Override
-    protected String doInBackground(Pair<Context, String>... params) {
+    protected String doInBackground(JokeTeller... params) {
         if(myApiService == null) {  // Only do this once
             MyApi.Builder builder = new MyApi.Builder(AndroidHttp.newCompatibleTransport(),
                     new AndroidJsonFactory(), null)
@@ -38,11 +36,10 @@ public class JokeAsyncTask extends AsyncTask<Pair<Context, String>, Void, String
             myApiService = builder.build();
         }
 
-        context = params[0].first;
-        String name = params[0].second;
+        jokeTeller = params[0];
 
         try {
-            return myApiService.sayHi(name).execute().getData();
+            return myApiService.retreiveJoke().execute().getData();
         } catch (IOException e) {
             return e.getMessage();
         }
@@ -50,6 +47,6 @@ public class JokeAsyncTask extends AsyncTask<Pair<Context, String>, Void, String
 
     @Override
     protected void onPostExecute(String result) {
-        Toast.makeText(context, result, Toast.LENGTH_LONG).show();
+        jokeTeller.tellJoke(result);
     }
 }
