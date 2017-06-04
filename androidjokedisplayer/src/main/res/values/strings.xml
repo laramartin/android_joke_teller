@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">androidjokedisplayer</string>
+    <string name="hipster_lorem_ipsum">Messenger bag next level tote bag aesthetic vice subway tile. Cray cardigan small batch, four loko tote bag unicorn tumblr tousled brunch kitsch fixie church-key asymmetrical forage. Echo park health goth crucifix, mlkshk quinoa cronut pickled. Ugh flannel disrupt food truck. Fashion axe flannel mixtape, taxidermy mlkshk post-ironic DIY tumeric. Cray keytar twee messenger bag post-ironic, kitsch gluten-free kogi godard selvage meditation. Irony portland tacos mixtape, yr bespoke shoreditch cloud bread authentic affogato.</string>
+    <string name="no_joke_found">No joke found!</string>
 </resources>
